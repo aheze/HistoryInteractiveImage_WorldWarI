@@ -25,8 +25,10 @@ class InputDescView: UIViewController, UITextViewDelegate, ReturnNewList {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        textView.text = textViewText
         textView.isEditable = editMode
+        view.backgroundColor = UIColor.clear
+//        view.layer.cornerRadius = 12
         
     }
     func returnList() {
@@ -40,10 +42,21 @@ class InputDescView: UIViewController, UITextViewDelegate, ReturnNewList {
 //        //changed
 //        changeTextDel?.changedText(newText: <#T##String#>, index: <#T##Int#>)
 //    }
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? "Untitled"
-        //        //changed
-         changeTextDel?.changedText(newText: updatedString, index: index)
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let updatedString = (textView.text as NSString?)?.replacingCharacters(in: range, with: text) ?? "Untitled"
+        textViewText = updatedString
+        
         return true
     }
+//    func textView(_ textView: UITextView, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        let updatedString = (textView.text as NSString?)?.replacingCharacters(in: range, with: string) ?? "Untitled"
+//        //        //changed
+//
+//        print("update")
+//
+//        textViewText = updatedString
+//        // changeTextDel?.changedText(newText: updatedString, index: index)
+//        return true
+//    }
 }

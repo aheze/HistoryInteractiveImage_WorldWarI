@@ -14,7 +14,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bridge logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="UBN-FR-5dM">
+                                <rect key="frame" x="100" y="144" width="214" height="618"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UBN-FR-5dM" secondAttribute="bottom" constant="100" id="Mgf-Tp-y9K"/>
+                            <constraint firstItem="UBN-FR-5dM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="U8A-cx-q08"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UBN-FR-5dM" secondAttribute="trailing" constant="100" id="hEB-QI-Fs4"/>
+                            <constraint firstItem="UBN-FR-5dM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="yyf-Mm-S6n"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -23,4 +34,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bridge logo-1" width="512" height="512"/>
+    </resources>
 </document>

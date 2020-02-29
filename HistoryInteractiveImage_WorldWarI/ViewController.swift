@@ -30,6 +30,55 @@ class ViewController: UIViewController, ChangedText, UIPopoverPresentationContro
     @IBOutlet weak var imageRight: NSLayoutConstraint!
     @IBOutlet weak var imageView: UIImageView!
     
+    var effectView = UIVisualEffectView()
+    
+    
+    @IBAction func aboutPressed(_ sender: Any) {
+        
+        let newView = UIView()
+        newView.layer.cornerRadius = 16
+        newView.clipsToBounds = true
+        
+        let newImageView = UIImageView()
+        newImageView.image = UIImage(named: "bridge logo-1")
+        
+        newView.addSubview(newImageView)
+        newImageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        var attributes = EKAttributes.centerFloat
+        attributes.positionConstraints.size.height = .constant(value: 750)
+        attributes.positionConstraints.size.width = .constant(value: 750)
+        attributes.entryInteraction = .absorbTouches
+        attributes.displayDuration = .infinity
+        attributes.screenInteraction = .dismiss
+//        attributes.roundCorners = .all(radius: 20)
+        
+        attributes.lifecycleEvents.willDisappear = {
+//            UIView.animate(withDuration: 0.5, animations: {
+//                self.effectView.alpha = 0
+//            }) {
+//
+//            }
+            UIView.animate(withDuration: 0.3, animations: {
+                self.effectView.alpha = 0
+            }) { _ in
+                self.effectView.removeFromSuperview()
+            }
+           
+        }
+        SwiftEntryKit.display(entry: newView, using: attributes)
+        
+        view.addSubview(effectView)
+        effectView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.effectView.alpha = 1
+        }
+        
+    }
     
     @IBOutlet weak var editToggle: UISegmentedControl!
     
@@ -45,11 +94,13 @@ class ViewController: UIViewController, ChangedText, UIPopoverPresentationContro
             editingMode = false
             deleteButton.isHidden = true
             newButton.isHidden = true
-            deleteMode = true
+            deleteMode = false
+            deleteButton.setTitle("Delete", for: .normal)
             
         case 1:
             print("edit mode")
             editingMode = true
+            deleteMode = false
             deleteButton.isHidden = false
             newButton.isHidden = false
         default:
@@ -66,10 +117,12 @@ class ViewController: UIViewController, ChangedText, UIPopoverPresentationContro
     @IBOutlet weak var deleteButton: UIButton!
     
     @IBAction func deletePressed(_ sender: Any) {
-        deleteMode = !deleteMode
-        if deleteMode == true {
+        //deleteMode = !deleteMode
+        if deleteMode == false {
+            deleteMode = true
             deleteButton.setTitle("Back to normal mode", for: .normal)
         } else {
+            deleteMode = false
             deleteButton.setTitle("Delete", for: .normal)
         }
     }
@@ -78,6 +131,7 @@ class ViewController: UIViewController, ChangedText, UIPopoverPresentationContro
     func changedText(newText: String, index: Int) {
         print("check")
         print(newText)
+        arrayOfTokens[index].desc = newText
     }
     
     let realm = try! Realm()
@@ -86,6 +140,14 @@ class ViewController: UIViewController, ChangedText, UIPopoverPresentationContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let blurEffect = UIBlurEffect(style: .systemChromeMaterialDark)
+        effectView.effect = blurEffect
+        view.addSubview(effectView)
+        effectView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        effectView.alpha = 0
         populateTokens()
         editToggle.selectedSegmentIndex = 0
         deleteButton.isHidden = true
@@ -96,6 +158,7 @@ class ViewController: UIViewController, ChangedText, UIPopoverPresentationContro
         tap.numberOfTapsRequired = 1
         view.addGestureRecognizer(tap)
         editingMode = false
+        deleteMode = false
     }
 //    func sortLists() {
 //        realmArray = realmArray!.sorted(byKeyPath: "indexP", ascending: false)
@@ -199,6 +262,8 @@ class ViewController: UIViewController, ChangedText, UIPopoverPresentationContro
                     popController.editMode = true
                     popController.changeTextDel = self
                     
+                    popController.textViewText = arrayOfTokens[hitTokenIndex].desc
+                    
                     returnListNow = popController
                     popController.index = hitTokenIndex
                     
@@ -223,6 +288,7 @@ class ViewController: UIViewController, ChangedText, UIPopoverPresentationContro
                 popController.popoverPresentationController?.sourceRect = tokenView.bounds
                 
                 popController.editMode = false
+                popController.textViewText = arrayOfTokens[hitTokenIndex].desc
                 
                 
                 self.present(popController, animated: true, completion: nil)

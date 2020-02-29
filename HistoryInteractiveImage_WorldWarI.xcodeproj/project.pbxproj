@@ -13,10 +13,13 @@
 		49301C0C24074E2400B4780B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49301C0A24074E2400B4780B /* Main.storyboard */; };
 		49301C0E24074E2E00B4780B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49301C0D24074E2E00B4780B /* Assets.xcassets */; };
 		49301C1124074E2E00B4780B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49301C0F24074E2E00B4780B /* LaunchScreen.storyboard */; };
+		49301C1924076B8A00B4780B /* InputDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49301C1824076B8A00B4780B /* InputDescView.swift */; };
+		49301C1B2408B48A00B4780B /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49301C1A2408B48A00B4780B /* TokenModel.swift */; };
+		4AD431E386898119BEB5D6C3 /* libPods-HistoryInteractiveImage_WorldWarI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC392768AF8F3A0BB4750FD /* libPods-HistoryInteractiveImage_WorldWarI.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49301C0124074E2400B4780B /* HistoryInteractiveImage_WorldWarI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HistoryInteractiveImage_WorldWarI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49301C0124074E2400B4780B /* WWI Bridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WWI Bridge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49301C0424074E2400B4780B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49301C0624074E2400B4780B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49301C0824074E2400B4780B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,11 @@
 		49301C0D24074E2E00B4780B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49301C1024074E2E00B4780B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49301C1224074E2E00B4780B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49301C1824076B8A00B4780B /* InputDescView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDescView.swift; sourceTree = "<group>"; };
+		49301C1A2408B48A00B4780B /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		831DBA2F2374084885C62463 /* Pods-HistoryInteractiveImage_WorldWarI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HistoryInteractiveImage_WorldWarI.debug.xcconfig"; path = "Target Support Files/Pods-HistoryInteractiveImage_WorldWarI/Pods-HistoryInteractiveImage_WorldWarI.debug.xcconfig"; sourceTree = "<group>"; };
+		9AC392768AF8F3A0BB4750FD /* libPods-HistoryInteractiveImage_WorldWarI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HistoryInteractiveImage_WorldWarI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B83202B1B645CD2A7BA6B3FD /* Pods-HistoryInteractiveImage_WorldWarI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HistoryInteractiveImage_WorldWarI.release.xcconfig"; path = "Target Support Files/Pods-HistoryInteractiveImage_WorldWarI/Pods-HistoryInteractiveImage_WorldWarI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD431E386898119BEB5D6C3 /* libPods-HistoryInteractiveImage_WorldWarI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,13 +51,15 @@
 			children = (
 				49301C0324074E2400B4780B /* HistoryInteractiveImage_WorldWarI */,
 				49301C0224074E2400B4780B /* Products */,
+				D9DB907AE5511A9EAAEAD601 /* Pods */,
+				E84260C58FAC849B09047EB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		49301C0224074E2400B4780B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49301C0124074E2400B4780B /* HistoryInteractiveImage_WorldWarI.app */,
+				49301C0124074E2400B4780B /* WWI Bridge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,12 +70,31 @@
 				49301C0424074E2400B4780B /* AppDelegate.swift */,
 				49301C0624074E2400B4780B /* SceneDelegate.swift */,
 				49301C0824074E2400B4780B /* ViewController.swift */,
+				49301C1A2408B48A00B4780B /* TokenModel.swift */,
+				49301C1824076B8A00B4780B /* InputDescView.swift */,
 				49301C0A24074E2400B4780B /* Main.storyboard */,
 				49301C0D24074E2E00B4780B /* Assets.xcassets */,
 				49301C0F24074E2E00B4780B /* LaunchScreen.storyboard */,
 				49301C1224074E2E00B4780B /* Info.plist */,
 			);
 			path = HistoryInteractiveImage_WorldWarI;
+			sourceTree = "<group>";
+		};
+		D9DB907AE5511A9EAAEAD601 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				831DBA2F2374084885C62463 /* Pods-HistoryInteractiveImage_WorldWarI.debug.xcconfig */,
+				B83202B1B645CD2A7BA6B3FD /* Pods-HistoryInteractiveImage_WorldWarI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E84260C58FAC849B09047EB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AC392768AF8F3A0BB4750FD /* libPods-HistoryInteractiveImage_WorldWarI.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +104,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49301C1524074E2F00B4780B /* Build configuration list for PBXNativeTarget "HistoryInteractiveImage_WorldWarI" */;
 			buildPhases = (
+				6EF411B99BB71C24304D30ED /* [CP] Check Pods Manifest.lock */,
 				49301BFD24074E2300B4780B /* Sources */,
 				49301BFE24074E2300B4780B /* Frameworks */,
 				49301BFF24074E2300B4780B /* Resources */,
@@ -84,7 +115,7 @@
 			);
 			name = HistoryInteractiveImage_WorldWarI;
 			productName = HistoryInteractiveImage_WorldWarI;
-			productReference = 49301C0124074E2400B4780B /* HistoryInteractiveImage_WorldWarI.app */;
+			productReference = 49301C0124074E2400B4780B /* WWI Bridge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,13 +164,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6EF411B99BB71C24304D30ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HistoryInteractiveImage_WorldWarI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		49301BFD24074E2300B4780B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				49301C0924074E2400B4780B /* ViewController.swift in Sources */,
+				49301C1924076B8A00B4780B /* InputDescView.swift in Sources */,
 				49301C0524074E2400B4780B /* AppDelegate.swift in Sources */,
+				49301C1B2408B48A00B4780B /* TokenModel.swift in Sources */,
 				49301C0724074E2400B4780B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +340,7 @@
 		};
 		49301C1624074E2F00B4780B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 831DBA2F2374084885C62463 /* Pods-HistoryInteractiveImage_WorldWarI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -292,7 +351,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ktkpiano.HistoryInteractiveImage-WorldWarI";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "WWI Bridge";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,6 +359,7 @@
 		};
 		49301C1724074E2F00B4780B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B83202B1B645CD2A7BA6B3FD /* Pods-HistoryInteractiveImage_WorldWarI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,7 +370,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ktkpiano.HistoryInteractiveImage-WorldWarI";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "WWI Bridge";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
